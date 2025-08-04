@@ -33,7 +33,21 @@ for rodada in range (1,totaltentativas + 1) :
     if(chute < 1 or > 100:)
        print("numero invalido")
        continue
+    
     acertou = chute == numeroSecreto
     maior = chute > numeroSecreto
     menor = chute < numeroSecreto
     
+    if(acertou):
+       print(f"Voce acertou e fez {pontos} ! ")
+       break
+    else:
+        if(maior):
+            print("voce errou! seu chute foi maior que o numeroSecreto")
+        elif(menor):
+            print("voce errou! seu chute foi menoor que o numerosecreto")
+
+            pontosperdidos = abs(numeroSecreto - chute)
+            pontos = pontos - pontosperdidos
+
+print("fim de jogo ! 0 numero era ",numeroSecreto)
